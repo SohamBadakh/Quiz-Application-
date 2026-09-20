@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeVerse Quiz Hub - Test Your Programming Skills</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti for victory celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="logo-container" id="logoHomeBtn">
+                <i class="fa-solid fa-code logo-icon"></i>
+                <div class="logo-text">
+                    <span class="brand-title">Code<span class="highlight">Verse</span></span>
+                    <span class="brand-subtitle">Quiz Challenge</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggleBtn" class="icon-btn" title="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="hackathon-badge">
+                    <i class="fa-solid fa-trophy"></i> Hackathon Project
+                </div>
+            </div>
+        </header>
+
+        <!-- SCREEN 1: CATEGORY SELECTION -->
+        <main id="homeScreen" class="screen active">
+            <div class="hero-section">
+                <span class="tagline"><i class="fa-solid fa-bolt"></i> Test & Elevate Your Code Skills</span>
+                <h1 class="hero-title">Select Your Programming Language</h1>
+                <p class="hero-desc">Choose a subject to launch your 10-question challenge. Each question carries <strong>2 Marks</strong> for a total of <strong>20 Marks</strong>.</p>
+            </div>
+
+            <div class="categories-grid">
+                <!-- C Card -->
+                <div class="category-card" data-category="c">
+                    <div class="card-badge">20 Marks</div>
+                    <div class="card-icon c-icon">
+                        <i class="fa-solid fa-c"></i>
+                    </div>
+                    <h3>C Language</h3>
+                    <p>Pointers, memory management, functions & basic syntax.</p>
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 10 Questions</span>
+                        <span><i class="fa-solid fa-star"></i> 2 Marks / Q</span>
+                    </div>
+                    <button class="btn btn-primary start-btn">Start Quiz <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+
+                <!-- C++ Card -->
+                <div class="category-card" data-category="cpp">
+                    <div class="card-badge">20 Marks</div>
+                    <div class="card-icon cpp-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>C++ Language</h3>
+                    <p>OOPs concepts, STL, references, destructors & templates.</p>
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 10 Questions</span>
+                        <span><i class="fa-solid fa-star"></i> 2 Marks / Q</span>
+                    </div>
+                    <button class="btn btn-primary start-btn">Start Quiz <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+
+                <!-- Java Card -->
+                <div class="category-card" data-category="java">
+                    <div class="card-badge">20 Marks</div>
+                    <div class="card-icon java-icon">
+                        <i class="fa-brands fa-java"></i>
+                    </div>
+                    <h3>Java</h3>
+                    <p>JVM, inheritance, interfaces, exception handling & collections.</p>
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 10 Questions</span>
+                        <span><i class="fa-solid fa-star"></i> 2 Marks / Q</span>
+                    </div>
+                    <button class="btn btn-primary start-btn">Start Quiz <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+
+                <!-- HTML Card -->
+                <div class="category-card" data-category="html">
+                    <div class="card-badge">20 Marks</div>
+                    <div class="card-icon html-icon">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <h3>HTML</h3>
+                    <p>Semantic tags, attributes, forms, audio/video & DOM structure.</p>
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 10 Questions</span>
+                        <span><i class="fa-solid fa-star"></i> 2 Marks / Q</span>
+                    </div>
+                    <button class="btn btn-primary start-btn">Start Quiz <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+
+                <!-- CSS Card -->
+                <div class="category-card" data-category="css">
+                    <div class="card-badge">20 Marks</div>
+                    <div class="card-icon css-icon">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS</h3>
+                    <p>Flexbox, Grid, selectors, animations, specificity & box model.</p>
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 10 Questions</span>
+                        <span><i class="fa-solid fa-star"></i> 2 Marks / Q</span>
+                    </div>
+                    <button class="btn btn-primary start-btn">Start Quiz <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+
+                <!-- JavaScript Card -->
+                <div class="category-card" data-category="javascript">
+                    <div class="card-badge">20 Marks</div>
+                    <div class="card-icon js-icon">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>ES6+, closures, promises, DOM manipulation & async await.</p>
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 10 Questions</span>
+                        <span><i class="fa-solid fa-star"></i> 2 Marks / Q</span>
+                    </div>
+                    <button class="btn btn-primary start-btn">Start Quiz <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </main>
+
+        <!-- SCREEN 2: ACTIVE QUIZ SCREEN -->
+        <main id="quizScreen" class="screen">
+            <div class="quiz-container">
+                <!-- Top Status Bar -->
+                <div class="quiz-header">
+                    <div class="subject-info">
+                        <span id="quizSubjectTag" class="badge">JavaScript</span>
+                        <span class="question-tracker">Question <strong id="currentQuestionNum">1</strong> of <span>10</span></span>
+                    </div>
+                    <div class="timer-box">
+                        <i class="fa-regular fa-clock"></i>
+                        <span id="timeDisplay">15:00</span>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-bar-container">
+                    <div id="progressBar" class="progress-bar-fill" style="width: 10%;"></div>
+                </div>
+
+                <!-- Question Box -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="marks-badge">+2 Marks</span>
+                        <h2 id="questionText">Loading question...</h2>
+                    </div>
+
+                    <!-- Options Container -->
+                    <div id="optionsContainer" class="options-grid">
+                        <!-- Options will be dynamically rendered via JS -->
+                    </div>
+                </div>
+
+                <!-- Question Navigation Controls -->
+                <div class="quiz-footer">
+                    <button id="prevBtn" class="btn btn-secondary" disabled>
+                        <i class="fa-solid fa-chevron-left"></i> Previous
+                    </button>
+
+                    <div class="quiz-bullets" id="questionBullets">
+                        <!-- Dots for quick jump -->
+                    </div>
+
+                    <button id="nextBtn" class="btn btn-primary">
+                        Next <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <button id="submitQuizBtn" class="btn btn-success hidden">
+                        Submit Quiz <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- SCREEN 3: RESULTS & ANSWER REVIEW -->
+        <main id="resultScreen" class="screen">
+            <div class="results-container">
+                <div class="result-card">
+                    <div class="trophy-wrapper">
+                        <i class="fa-solid fa-award trophy-icon" id="resultTrophy"></i>
+                    </div>
+                    <h2 class="result-title" id="resultTitle">Quiz Completed!</h2>
+                    <p class="result-subtitle" id="resultSubtitle">Here is your performance summary for <span id="resSubject">JavaScript</span></p>
+
+                    <!-- Score Dashboard -->
+                    <div class="score-dashboard">
+                        <div class="main-score-box">
+                            <span class="score-number" id="finalScore">16</span>
+                            <span class="score-max">/ 20 Marks</span>
+                            <span class="score-percentage" id="percentageTag">80%</span>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-box correct-box">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span class="stat-value" id="correctCount">8</span>
+                                <span class="stat-label">Correct (+16 Marks)</span>
+                            </div>
+                            <div class="stat-box incorrect-box">
+                                <i class="fa-solid fa-circle-xmark"></i>
+                                <span class="stat-value" id="incorrectCount">2</span>
+                                <span class="stat-label">Incorrect / Skipped</span>
+                            </div>
+                            <div class="stat-box time-box">
+                                <i class="fa-solid fa-stopwatch"></i>
+                                <span class="stat-value" id="timeTaken">02:45</span>
+                                <span class="stat-label">Time Taken</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="result-actions">
+                        <button id="retryQuizBtn" class="btn btn-primary">
+                            <i class="fa-solid fa-rotate-right"></i> Retake Quiz
+                        </button>
+                        <button id="changeSubjectBtn" class="btn btn-secondary">
+                            <i class="fa-solid fa-list-check"></i> Choose Other Language
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Detailed Review Section -->
+                <div class="review-section">
+                    <div class="review-header">
+                        <h3><i class="fa-solid fa-list-ol"></i> Detailed Answer Review</h3>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">All (10)</button>
+                            <button class="filter-btn" data-filter="correct">Correct</button>
+                            <button class="filter-btn" data-filter="incorrect">Incorrect / Unanswered</button>
+                        </div>
+                    </div>
+
+                    <div id="reviewContainer" class="review-list">
+                        <!-- Dynamic Answer Cards -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
